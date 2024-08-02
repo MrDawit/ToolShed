@@ -7,6 +7,7 @@ const app = express();
 
 //ADD DB MODEL
 const db = require("./models");
+const { fileURLToPath } = require('url');
 
 
 //FORCE SYNC WHILE IN DEV
@@ -34,6 +35,10 @@ require("./routes/toolshed-api.js")(app);
 //CONFIGURE FOR HEROKU DEPLoYMENT
 
  if (process.env.NODE_ENV === 'production') {
+//Resolving dirname for ES module
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = path.dirname(__filename);
+
   // Serve any static files
   app.use(express.static('client/build'));
   // Handle React routing, return all requests to React app

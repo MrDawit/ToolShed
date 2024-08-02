@@ -34,7 +34,7 @@ function App() {
     // const restoreOriginalUri = async (_oktaAuth, originalUri) => {
     //   history.replace(toRelativeUrl(originalUri || '/', window.location.origin));
     // };
-    const history = useHistory();
+    // const history = useHistory();
 
 //     const onAuthRequired = () => {
 
@@ -98,7 +98,7 @@ function App() {
 
 
     // Redirect to the /login page that has a CustomLoginComponent
-    history.push('/home');
+    // history.push('/');
 
 return (
 
