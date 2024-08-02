@@ -65,7 +65,7 @@ import AddTool from "../components/Buttons/AddToolBtnHome";
 import Spacer from "components/Spacer/index.js";
 import SearchBtnHome from "../components/Buttons/SearchBtnHome/SearchBtnHome";
 import ScrollToTop from "components/ScrollToTop";
-import UserNameDisplayHome from "components/UserNameDisplay/UserNameDisplayHome.js";
+//import UserNameDisplayHome from "components/UserNameDisplay/UserNameDisplayHome.js";
 import ViewToolsBtn from "components/Buttons/ViewToolsBtn";
 //import Loaned from "./Loaned";
 //==========================
@@ -164,7 +164,7 @@ export default function Home() {
                   {/* <Route exact path="/home" component={Intro} /> */}
                   <div>
                     <Spacer />
-                    <UserNameDisplayHome />
+                    {/* <UserNameDisplayHome /> */}
                     <h1 className="text-white">
                       Welcome to the ToolShed! <br />
                       <span className="text-white"></span>

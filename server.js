@@ -16,7 +16,9 @@ db.sequelize.sync({ /*alter:true*/  }).then(() => {
 
 var corsOptions = {
   // origin: "http://localhost:8081"
-  origin: "https://dev-11624122.okta.com"
+  origin: "https://dev-11624122.okta.com",
+  credentials:true, //access-control-allow-credentials:true
+  optionSuccessStatus:200,
 };
 //COMMENT FOR THE SAKE OF COMMENT
 app.use(cors(corsOptions));
@@ -41,7 +43,7 @@ require("./routes/toolshed-api.js")(app);
     console.log("server in production mode");
     // res.sendFile('client/build', 'index.html');
   });
-}; 
+};
 
 // if (process.env.NODE_ENV === 'production') {
 //   // Serve any static files

@@ -215,7 +215,7 @@ export default function Borrowed() {
                   </Col>
                 </Row>
 
-                <UserNameDisplay />
+                {/* <UserNameDisplay /> */}
               </Container>
 
             </div>

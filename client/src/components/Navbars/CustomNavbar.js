@@ -1,7 +1,7 @@
 
 import React from "react";
 import { useHistory, Link } from "react-router-dom";
-import { useOktaAuth } from "@okta/okta-react";
+// import { useOktaAuth } from "@okta/okta-react";
 import ScrollToTop from "../ScrollToTop/index.js";
 // reactstrap components
 import {
@@ -23,17 +23,17 @@ export default function CustomNavbar() {
 
 
   //for okta
-  const history = useHistory({
-    // basename: "", // The base URL of the app (see below)
-    // forceRefresh: false, // Set true to force full page refreshes
-    // keyLength: 6, // The length of location.key
-    // // A function to use to confirm navigation with the user (see below)
+//   const history = useHistory({
+//     // basename: "", // The base URL of the app (see below)
+//     // forceRefresh: false, // Set true to force full page refreshes
+//     // keyLength: 6, // The length of location.key
+//     // // A function to use to confirm navigation with the user (see below)
     
-    getUserConfirmation: (message, callback) => callback(window.confirm(message))
-});
-  const { authState, oktaAuth } = useOktaAuth();
-  const login = async () => history.push('/login');
-  const logout = async () => oktaAuth.signOut();
+//     getUserConfirmation: (message, callback) => callback(window.confirm(message))
+// });
+  // const { authState, oktaAuth } = useOktaAuth();
+  // const login = async () => history.push('/login');
+  // const logout = async () => oktaAuth.signOut();
   //end
   const [collapseOpen, setCollapseOpen] = React.useState(false);
   const [collapseOut, setCollapseOut] = React.useState("");
@@ -190,13 +190,13 @@ export default function CustomNavbar() {
             </NavItem>
 
             {/* Okta */}
-            {authState.isAuthenticated && (
+            {/* {authState.isAuthenticated && (
               <NavItem id="profile-button">
                 <Link to="/profile">Profile</Link>
               </NavItem>
             )}
             {authState.isAuthenticated && <NavItem><Button id="logout-button" onClick={logout}>Logout</Button></NavItem>}
-            {!authState.isPending && !authState.isAuthenticated && <NavItem><Button onClick={login}>Login</Button></NavItem>}
+            {!authState.isPending && !authState.isAuthenticated && <NavItem><Button onClick={login}>Login</Button></NavItem>} */}
             {/* Okta end */}
             
             {/* <NavItem>
