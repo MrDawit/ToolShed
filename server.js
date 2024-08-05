@@ -4,6 +4,10 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const path = require('path');
 const app = express();
+
+//conditional for child_process working under cross platform conditions
+const start = (process.platform == 'darwin'? 'open': process.platform == 'win32'? 'start': 'xdg-open');
+
 //Whenever changing ports/site, Okta profile on Okta website needs to be updated 
 //along with CORS access to port/site on different section of Okta website
 const PORT = process.env.PORT || 3001;
@@ -61,12 +65,13 @@ if (process.env.NODE_ENV === 'production') {
   app.listen(PORT, () => {
     if (process.env.NODE_ENV_PRODUCTION_TESTING === 'true') {
         //opens up localhost address on browser (windows)
-        require('child_process').exec(`start http://localhost:${PORT}/`);
+        require('child_process').exec(`${start} http://localhost:${PORT}/`);
         console.log(`Server is running on port ${PORT} in production mode.`);
     }else {
           //opens up production address on browser (windows)
-          require('child_process').exec(`start https://toolshed.onrender.com/`);
+          require('child_process').exec(`${start} https://toolshed.onrender.com/`);
           console.log(`Server is running on port ${PORT} in production address.`);
+          console.log(`PRODUCTION TEST (env variable) = ${process.env.NODE_ENV_PRODUCTION_TESTING || 'NONE'} `);
     }    
   });
   
