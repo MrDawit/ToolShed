@@ -63,7 +63,7 @@ if (process.env.NODE_ENV === 'production') {
 
   //listen for requests
   app.listen(PORT, () => {
-    if (process.env.NODE_ENV_PRODUCTION_TESTING === 'true') {
+    if (process.env.NODE_ENV_PRODUCTION_TEST === 'true') {
         //opens up localhost address on browser (windows)
         require('child_process').exec(`${start} http://localhost:${PORT}/`);
         console.log(`Server is running on port ${PORT} in production mode.`);
@@ -71,7 +71,7 @@ if (process.env.NODE_ENV === 'production') {
           //opens up production address on browser (windows)
           require('child_process').exec(`${start} https://toolshed.onrender.com/`);
           console.log(`Server is running on port ${PORT} in production address.`);
-          console.log(`PRODUCTION TEST (env variable) = ${process.env.NODE_ENV_PRODUCTION_TESTING || 'NONE'} `);
+          console.log(`PRODUCTION TEST (env variable) = ${process.env.NODE_ENV_PRODUCTION_TEST || 'NONE'} `);
     }    
   });
   
